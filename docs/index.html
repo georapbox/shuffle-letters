@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>shuffle-letters.js - Live demo</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body class="bg-light">
+  <h1 class="text-center mt-3 mt-md-5">
+    shuffle-letters.js
+  </h1>
+
+  <p class="text-center">
+    A JavaScript library to shuffle the text content of a DOM element with an animated effect.
+  </p>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3">
+        <div id="element" class="fs-2 fw-light d-flex align-items-center mb-3">
+          Test it for yourself!
+        </div>
+
+        <form id="form">
+          <input name="text" class="form-control form-control-lg" type="text" placeholder="Type anything and hit return..." />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIXME Fix path -->
+  <script src="../dist/shuffle-letters.umd.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 [![npm version](https://img.shields.io/npm/v/shuffle-letters.svg)](https://www.npmjs.com/package/shuffle-letters)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://georapbox.mit-license.org/@2021)
 
-# shuffle-letters
+# shuffle-letters.js
 
 A JavaScript library to shuffle the text content of a DOM element with an animated effect.
 
