@@ -1,6 +1,4 @@
 [![npm version](https://img.shields.io/npm/v/shuffle-letters.svg)](https://www.npmjs.com/package/shuffle-letters)
-[![dependencies Status](https://status.david-dm.org/gh/georapbox/shuffle-letters.svg)](https://david-dm.org/georapbox/shuffle-letters)
-[![devDependencies Status](https://status.david-dm.org/gh/georapbox/shuffle-letters.svg?type=dev)](https://david-dm.org/georapbox/shuffle-letters?type=dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://georapbox.mit-license.org/@2021)
 
 # shuffle-letters
