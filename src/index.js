@@ -4,14 +4,14 @@ import { isElement } from './isElement';
 /**
  * Shuffle the text content of a DOM element
  *
- * @param {HTMLElement} element
- * @param {object} config
- * @param {string} config.text
- * @param {number} config.step
- * @param {number} config.fps
- * @param {function} config.callback
+ * @param {HTMLElement} element The HTML element whose `textContent` we want to apply the shuffle effect.
+ * @param {object} [config={}] Configurable object to override the default options.
+ * @param {string} [config.text=''] Alternative text that can be used instead of the `textContent` of the `element`.
+ * @param {number} [config.step=8] The number of times the characters will be shuffled before the animation ends.
+ * @param {number} [config.fps=30] The amount of frames per second that the animation runs.
+ * @param {function} [config.onComplete=() => void] A callback function that is called when the animation of the effect is complete.
  */
-export default function shuffleLetters(element, config = {}) {
+function shuffleLetters(element, config = {}) {
   /**
    * Default options, if not provided by the user.
    * @type {object}
@@ -20,7 +20,7 @@ export default function shuffleLetters(element, config = {}) {
     text: '',
     step: 8,
     fps: 30,
-    callback: () => {}
+    onComplete: () => void 0
   };
 
   const options = {
@@ -76,8 +76,8 @@ export default function shuffleLetters(element, config = {}) {
     const charsPositionsLength = charsPositions.length;
 
     if (start > charsPositionsLength) {
-      if (typeof options.callback === 'function') {
-        options.callback(element);
+      if (typeof options.onComplete === 'function') {
+        options.onComplete(element);
       }
 
       return;
@@ -98,3 +98,5 @@ export default function shuffleLetters(element, config = {}) {
     }, 1000 / options.fps);
   })(-options.step);
 }
+
+export default shuffleLetters;

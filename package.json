@@ -1,8 +1,10 @@
 {
   "name": "shuffle-letters",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A JavaScript library to shuffle the text content of a DOM element with an animated effect.",
+  "main": "dist/shuffle-letters.cjs.min.js",
+  "module": "dist/shuffle-letters.esm.min.js",
+  "unpkg": "dist/shuffle-letters.umd.min.js",
   "scripts": {
     "build": "rollup -c --environment BUILD:production",
     "dev": "rollup -c -w",
