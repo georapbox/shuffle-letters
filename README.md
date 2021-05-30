@@ -39,6 +39,7 @@ const shuffleLetters = require('shuffle-letters');
 ```js
 shuffleLetters(element, [config])
 ```
+
 ### Params
 
 | Param | Type | Default | Description |
@@ -49,6 +50,8 @@ shuffleLetters(element, [config])
 | [config.step] | <code>number</code> | <code>8</code> | The number of times the characters will be shuffled before the animation ends. |
 | [config.fps] | <code>number</code> | <code>30</code> | The amount of frames per second that the animation runs. |
 | [config.onComplete] | <code>function</code> | <code>() &#x3D;&gt; void</code> | A callback function that is called when the animation of the effect is complete. |
+
+**Returns**: <code>function</code> - Returns a function that when called, it clears the `timeoutID` which identifies the timer created by the call to `setTimeout()` that is used internally for the shuffle effect. Useful for cleanup purposes, for example when you want to remove the element before the animation is completed.
 
 ## Usage examples
 
@@ -109,6 +112,23 @@ Array.prototype.forEach.call(listItems, (element, index) => {
     }
   });
 });
+```
+
+### Example 4 - Cleanup
+
+#### HTML
+```html
+<h1>This is a funcy title</h1>
+```
+
+#### JavaScript
+```js
+  const clearShuffleLetters = shuffleLetters(document.querySelector('h1'), {
+    step: 200
+  });
+  
+  // Cleanup after 1 second
+  setTimeout(() => clearShuffleLetters(), 1000);
 ```
 
 ## License

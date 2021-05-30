@@ -4,6 +4,7 @@ body {
 
 #element {
   min-height: 200px;
+  overflow-wrap: anywhere;
 }
 
 #element:before {

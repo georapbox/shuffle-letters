@@ -10,6 +10,7 @@ import { isElement } from './isElement';
  * @param {number} [config.step=8] The number of times the characters will be shuffled before the animation ends.
  * @param {number} [config.fps=30] The amount of frames per second that the animation runs.
  * @param {function} [config.onComplete=() => void] A callback function that is called when the animation of the effect is complete.
+ * @returns {function} Returns a function that when called, it clears the `timeoutID` which identifies the timer created by the call to `setTimeout()` that is used internally for the shuffle effect.
  */
 function shuffleLetters(element, config = {}) {
   /**
@@ -71,6 +72,8 @@ function shuffleLetters(element, config = {}) {
 
   element.textContent = '';
 
+  let timeout = null;
+
   (function shuffle(start) {
     const charsArrayCopy = [...charsArray];
     const charsPositionsLength = charsPositions.length;
@@ -93,10 +96,15 @@ function shuffleLetters(element, config = {}) {
 
     element.textContent = charsArrayCopy.join('');
 
-    setTimeout(() => {
+    timeout = setTimeout(() => {
       shuffle(start + 1);
     }, 1000 / options.fps);
   })(-options.step);
+
+  return () => {
+    clearTimeout(timeout);
+    timeout = null;
+  };
 }
 
 export default shuffleLetters;
