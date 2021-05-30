@@ -7,7 +7,7 @@ import { isElement } from './isElement';
  * @param {HTMLElement} element The HTML element whose `textContent` we want to apply the shuffle effect.
  * @param {object} [config={}] Configurable object to override the default options.
  * @param {string} [config.text=''] Alternative text that can be used instead of the `textContent` of the `element`.
- * @param {number} [config.step=8] The number of times the characters will be shuffled before the animation ends.
+ * @param {number} [config.iterations=8] The number of times the characters will be shuffled before the animation ends.
  * @param {number} [config.fps=30] The amount of frames per second that the animation runs.
  * @param {function} [config.onComplete=() => void] A callback function that is called when the animation of the effect is complete.
  * @returns {function} Returns a function that when called, it clears the `timeoutID` which identifies the timer created by the call to `setTimeout()` that is used internally for the shuffle effect.
@@ -19,7 +19,7 @@ function shuffleLetters(element, config = {}) {
    */
   const defaults = {
     text: '',
-    step: 8,
+    iterations: 8,
     fps: 30,
     onComplete: () => void 0
   };
@@ -87,7 +87,7 @@ function shuffleLetters(element, config = {}) {
     }
 
     for (let i = Math.max(start, 0); i < charsPositionsLength; i += 1) {
-      if (i < start + options.step) {
+      if (i < start + options.iterations) {
         charsArrayCopy[charsPositions[i]] = getRandomCharacterForType(charsTypes[charsPositions[i]]);
       } else {
         charsArrayCopy[charsPositions[i]] = '';
@@ -99,7 +99,7 @@ function shuffleLetters(element, config = {}) {
     timeout = setTimeout(() => {
       shuffle(start + 1);
     }, 1000 / options.fps);
-  })(-options.step);
+  })(-options.iterations);
 
   return () => {
     clearTimeout(timeout);

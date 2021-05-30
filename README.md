@@ -47,7 +47,7 @@ shuffleLetters(element, [config])
 | element | <code>HTMLElement</code> |  | The HTML element whose `textContent` we want to apply the shuffle effect. |
 | [config] | <code>object</code> | <code>{}</code> | Configurable object to override the default options. |
 | [config.text] | <code>string</code> | <code>&quot;&#x27;&#x27;&quot;</code> | Alternative text that can be used instead of the `textContent` of the `element`. |
-| [config.step] | <code>number</code> | <code>8</code> | The number of times the characters will be shuffled before the animation ends. |
+| [config.iterations] | <code>number</code> | <code>8</code> | The number of times the characters will be shuffled before the animation ends. |
 | [config.fps] | <code>number</code> | <code>30</code> | The amount of frames per second that the animation runs. |
 | [config.onComplete] | <code>function</code> | <code>() &#x3D;&gt; void</code> | A callback function that is called when the animation of the effect is complete. |
 
@@ -77,7 +77,7 @@ shuffleLetters(element, [config])
 ```js
 shuffleLetters(document.querySelector('h1'), {
   text: 'Yet another funcy title',
-  step: 12,
+  iterations: 12,
   fps: 60,
   onComplete: el => {
     console.log('Effect was completed.');
@@ -124,7 +124,7 @@ Array.prototype.forEach.call(listItems, (element, index) => {
 #### JavaScript
 ```js
   const clearShuffleLetters = shuffleLetters(document.querySelector('h1'), {
-    step: 200
+    iterations: 200
   });
   
   // Cleanup after 1 second
