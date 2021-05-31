@@ -23,7 +23,12 @@
     "type": "git",
     "url": "git+https://github.com/georapbox/shuffle-letters.git"
   },
-  "keywords": [],
+  "keywords": [
+    "shuffle",
+    "letters",
+    "animation",
+    "effect"
+  ],
   "author": "George Raptis <georapbox@gmail.com>",
   "license": "MIT",
   "bugs": {

@@ -2,7 +2,8 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
-const LIBRARY_NAME = 'shuffle-letters';
+const LIBRARY_FILE_NAME = 'shuffle-letters';
+const LIBRARY_NAME = 'shuffleLetters';
 const EXTERNAL = []; // Indicate which modules should be treated as external
 const GLOBALS = {}; // https://rollupjs.org/guide/en/#outputglobals
 
@@ -30,15 +31,15 @@ const makeConfig = (env = 'development') => {
     output: [
       {
         banner,
-        name: 'shuffleLetters',
-        file: `dist/${LIBRARY_NAME}.umd.${bundleSuffix}js`, // UMD
+        name: LIBRARY_NAME,
+        file: `dist/${LIBRARY_FILE_NAME}.umd.${bundleSuffix}js`, // UMD
         format: 'umd',
         exports: 'auto',
         globals: GLOBALS
       },
       {
         banner,
-        file: `dist/${LIBRARY_NAME}.cjs.${bundleSuffix}js`, // CommonJS
+        file: `dist/${LIBRARY_FILE_NAME}.cjs.${bundleSuffix}js`, // CommonJS
         format: 'cjs',
         // We use `default` here as we are only exporting one thing using `export default`.
         // https://rollupjs.org/guide/en/#outputexports
@@ -47,7 +48,7 @@ const makeConfig = (env = 'development') => {
       },
       {
         banner,
-        file: `dist/${LIBRARY_NAME}.esm.${bundleSuffix}js`, // ESM
+        file: `dist/${LIBRARY_FILE_NAME}.esm.${bundleSuffix}js`, // ESM
         format: 'es',
         exports: 'auto',
         globals: GLOBALS
