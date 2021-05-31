@@ -1,3 +1,4 @@
+![build](https://github.com/georapbox/shuffle-letters/workflows/build/badge.svg)
 [![npm version](https://img.shields.io/npm/v/shuffle-letters.svg)](https://www.npmjs.com/package/shuffle-letters)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://georapbox.mit-license.org/@2021)
 
