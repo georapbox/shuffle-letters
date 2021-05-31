@@ -7,6 +7,10 @@ A JavaScript library to shuffle the text content of a DOM element with an animat
 
 > NOTE: This library is a port to vanilla JavaScript of the [Shuffle Letters Effect](https://tutorialzine.com/2011/09/shuffle-letters-effect-jquery) jQuery plugin.
 
+## Demo
+
+Check [here](https://georapbox.github.io/shuffle-letters/) for a live demo.
+
 ## Install
 
 ```sh
