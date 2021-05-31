@@ -32,3 +32,8 @@ jobs:
         npm run test:coverage --if-present
         npm run lint --if-present
         npm run build --if-present
+
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
