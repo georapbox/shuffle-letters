@@ -6,30 +6,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>shuffle-letters.js - Live demo</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link rel="stylesheet" href="main.css">
 </head>
 <body class="bg-light">
-  <h1 class="text-center mt-5 px-4">
-    shuffle-letters.js
-  </h1>
+  <div class="text-center my-5 py-0 py-lg-3 px-4">
+    <h1>
+      shuffle-letters.js
+    </h1>
 
-  <p class="text-center px-4">
-    A JavaScript library to shuffle the text content of a DOM element with an animated effect.
-  </p>
+    <p>
+      A JavaScript library to shuffle the text content of a DOM element with an animated effect.
+    </p>
+
+    <a href="https://github.com/georapbox/shuffle-letters" target="_blank" rel="noopener noreferrer" class="btn btn-dark rounded-pill ps-3">
+      <span class="d-flex align-items-center justify-content-center">
+        Fork me on GitHub
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="26" height="26" class="ms-2">
+          <path fill="currentColor" d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9 1.4.3 2.6.4 3.8.4 8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1-8.4 1.9-15.9 2.7-22.6 2.7-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1 10.5 0 20-3.4 25.6-6 2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8 0 0 1.6-.5 5-.5 8.1 0 26.4 3.1 56.6 24.1 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 30.2-21 48.5-24.1 56.6-24.1 3.4 0 5 .5 5 .5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5 1.2 0 2.6-.1 4-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32z"/>
+        </svg>
+      </span>
+    </a>
+  </div>
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3">
-        <div id="element" class="fs-2 fw-light d-flex align-items-center mb-3">
-          Test it for yourself!
-        </div>
+      <div class="col-lg-4 col-md-5 order-1 order-md-0">
+        <div class="card h-100">
+          <div class="card-body">
+            <form class="row g-3" autocomplete="off">
+              <h5>Options</h5>
 
-        <form id="form">
-          <input name="text" class="form-control form-control-lg" type="text" placeholder="Type anything and hit return..." />
-        </form>
+              <div class="col-12">
+                <label for="text" class="form-label">
+                  <code>text</code>
+                </label>
+
+                <input
+                  id="text"
+                  class="form-control"
+                  name="text"
+                  type="text"
+                  placeholder="Type anything..."
+                  autofocus
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="iterations" class="form-label">
+                  <code>iterations</code>
+                </label>
+
+                <input
+                  id="iterations"
+                  class="form-control"
+                  name="iterations"
+                  type="number"
+                  min="1"
+                  max="50"
+                  value="8"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="fps" class="form-label">
+                  <code>fps</code>
+                </label>
+
+                <input
+                  id="fps"
+                  class="form-control"
+                  name="fps"
+                  type="number"
+                  min="1"
+                  max="60"
+                  value="30"
+                />
+              </div>
+
+              <div class="col-12">
+                <input type="submit" class="btn btn-primary w-100" value="Shuffle" />
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
+
+      <div class="col-lg-8 col-md-7 mb-3 mb-md-0">
+        <div class="card h-100">
+          <div class="card-body d-flex">
+            <span class="me-2 me-md-3 fs-2 fw-light" style="opacity: 0.6; line-height: 1.35;">
+              >
+            </span>
+
+            <div id="demo-element" class="fs-2 fw-light">
+              Test it for yourself!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 my-4 my-lg-5 text-center">
+      <small>
+        Licensed under <a href="https://georapbox.mit-license.org/@2021" target="_blank" rel="noopener noreferrer">The MIT License (MIT)</a>
+      </small>
     </div>
   </div>
 

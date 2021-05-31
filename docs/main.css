@@ -1,16 +1,12 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
-#element {
-  min-height: 200px;
+#demo-element {
   overflow-wrap: anywhere;
 }
 
-#element:before {
-  content: ">";
-  margin-right: 1rem;
-  opacity: 0.5;
-  font-weight: 400;
-  font-family: Arial, sans-serif;
+.card {
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 15%);
+  border: 0;
 }

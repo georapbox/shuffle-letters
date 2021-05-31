@@ -1,24 +1,24 @@
 (function () {
   'use strict';
 
-  var element = document.getElementById('element');
-  var form = document.getElementById('form');
+  var element = document.getElementById('demo-element');
   var clearShuffleLetters;
 
   window.shuffleLetters(element);
 
-  form.addEventListener('submit', function (evt) {
+  document.forms[0].addEventListener('submit', function (evt) {
+    const form = evt.target;
+
     evt.preventDefault();
 
-    if (typeof clear === 'function') {
+    if (typeof clearShuffleLetters === 'function') {
       clearShuffleLetters();
     }
 
     clearShuffleLetters = window.shuffleLetters(element, {
-      text: evt.target['text'].value || 'Test it for yourself!',
-      onComplete: (el) => {
-        console.log('Finished', el);
-      }
+      text: form['text'].value || 'Test it for yourself!',
+      iterations: Number(form['iterations'].value) || 8,
+      fps: Number(form['fps'].value) || 30
     });
   });
 }());
