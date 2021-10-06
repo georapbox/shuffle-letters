@@ -32,7 +32,7 @@ import shuffleLetters from 'shuffle-letters';
 ### Using CommonJS require statement
 
 ```js
-const shuffleLetters = require('shuffle-letters');
+const shuffleLetters = require('shuffle-letters').default;
 ```
 
 ### Old school browser global
