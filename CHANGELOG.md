@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# v1.0.2 - 2021-10-07
+
+- Minor update in documentation
+
 # v1.0.1 - 2021-10-06
 
 - Correct the instructions for requiring the CommonJS export in documentation.
