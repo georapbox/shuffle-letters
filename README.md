@@ -32,7 +32,7 @@ import shuffleLetters from 'shuffle-letters';
 ### Using CommonJS require statement
 
 ```js
-const shuffleLetters = require('shuffle-letters')
+const shuffleLetters = require('shuffle-letters');
 
 // If you use a bundler like Webpack, you may need to import it the following way 
 // as it might try to use the ESM module instead of the CommonJS.
