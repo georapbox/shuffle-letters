@@ -8,11 +8,13 @@ export function getRandomCharacterForType(charType) {
   let charsPool = '';
 
   if (charType === 'lowerCase') {
-    charsPool = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    charsPool = 'abcdefghijklmnopqrstuvwxyz';
   } else if (charType === 'upperCase') {
-    charsPool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    charsPool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   } else if (charType === 'symbol') {
     charsPool = ',.?/\\(^)![]{}*&^%$#\'"';
+  } else if (charType === 'digit') {
+    charsPool = '0123456789';
   }
 
   const charsPoolArray = charsPool.split('');

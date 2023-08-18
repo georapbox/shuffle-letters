@@ -63,6 +63,8 @@ export function shuffleLetters(element, config = {}) {
       charsTypes[i] = 'lowerCase';
     } else if (/[A-Z]/.test(char)) {
       charsTypes[i] = 'upperCase';
+    } else if (/[0-9]/.test(char)) {
+      charsTypes[i] = 'digit';
     } else {
       charsTypes[i] = 'symbol';
     }
