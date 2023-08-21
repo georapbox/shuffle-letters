@@ -7,14 +7,22 @@
 export function getRandomCharacterForType(charType) {
   let charsPool = '';
 
-  if (charType === 'lowerCase') {
-    charsPool = 'abcdefghijklmnopqrstuvwxyz';
-  } else if (charType === 'upperCase') {
-    charsPool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  } else if (charType === 'symbol') {
-    charsPool = ',.?/\\(^)![]{}*&^%$#\'"';
-  } else if (charType === 'digit') {
-    charsPool = '0123456789';
+  switch (charType) {
+    case 'lowerCase':
+      charsPool = 'abcdefghijklmnopqrstuvwxyz';
+      break;
+    case 'upperCase':
+      charsPool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      break;
+    case 'digit':
+      charsPool = '0123456789';
+      break;
+    case 'symbol':
+      charsPool = ',.?/\\(^)![]{}*&^%$#\'"';
+      break;
+    default:
+      // Handle a default case if needed
+      break;
   }
 
   const charsPoolArray = charsPool.split('');

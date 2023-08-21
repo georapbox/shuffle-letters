@@ -7,7 +7,7 @@ jest.mock('../src/isElement', () => ({
 }));
 
 describe('shuffle-letters.js', () => {
-  const defaultText = 'This is a funcy title!';
+  const defaultText = 'Lorem ipusm dolor sit amet 123456 !@#$%^&*()';
   const { document } = new JSDOM(`<!DOCTYPE html><h1>${defaultText}</h1>`).window;
   const el = document.querySelector('h1');
 
